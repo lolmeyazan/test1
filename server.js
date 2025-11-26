@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD; 
 
 // استخدام اسم المستخدم lolmeyazan و رابط Cluster01.xrgbepq، مع إضافة اسم قاعدة البيانات siteDB.
-const MONGO_URI = `mongodb+srv://lolmeyazan:${MONGO_PASSWORD}@cluster01.xrgbepq.mongodb.net/siteDB`;
+const MONGO_URI = `mongodb+srv://lolmeyazan:Cluster0@cluster0.v4wwyi5.mongodb.net/`;
 
 // ----------------------------------------------------
 // إعدادات Middleware

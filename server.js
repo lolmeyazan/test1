@@ -5,6 +5,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const compression = require('compression'); // ضغط البيانات
+const helmet = require('helmet'); // حماية إضافية
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,12 @@ const MONGO_URI = `mongodb+srv://lolmeyazan:Cluster0@cluster0.v4wwyi5.mongodb.ne
 
 // 1️⃣ ضغط الاستجابات (gzip/brotli) - يقلل حجم البيانات بنسبة 70%
 app.use(compression());
+
+// 2️⃣ حماية إضافية مع Helmet
+app.use(helmet({
+  contentSecurityPolicy: false, // تعطيل CSP للسماح بالموارد الخارجية
+  crossOriginEmbedderPolicy: false
+}));
 
 // 2️⃣ CORS محسّن
 app.use(cors({
